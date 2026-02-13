@@ -126,25 +126,42 @@
 
     .about-text {
       font-family: 'Work Sans', sans-serif;
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
+    .about-text-content {
+      flex: 1;
     }
 
     .about-text h1 {
       font-family: 'Instrument Serif', serif;
-      font-size: clamp(32px, 4.5vw, 48px);
+      font-size: clamp(24px, 3.5vw, 36px);
       font-style: italic;
       font-weight: 400;
-      line-height: 1.2;
-      margin: 0 0 2rem 0;
+      line-height: 1.3;
+      margin: 0 0 1.5rem 0;
       color: #0D0D0D;
     }
 
     .about-text p {
       font-family: 'Work Sans', sans-serif;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1.8;
       color: #0D0D0D;
-      margin: 0 0 1.5rem 0;
-      max-width: 65ch;
+      margin: 0 0 1rem 0;
+    }
+
+    .about-text-image {
+      flex-shrink: 0;
+      width: 280px;
+    }
+
+    .about-text-image img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     @media (max-width: 768px) {
@@ -205,6 +222,14 @@
         </div>
         
         <div class="about-text">
+          <div class="about-text-content">
+            <h1>Hi, I'm Sunni (Sunny☀️)</h1>
+            <p>I am a designer working across brand and space.</p>
+            <p>I was trained in graphic design, where I developed a foundation in identity systems and visual communication.</p>
+          </div>
+          <div class="about-text-image">
+            <img src="assets/images/About/About 5.jpg" alt="About" />
+          </div>
         </div>
       </div>
     </main>

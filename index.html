@@ -132,13 +132,14 @@
       font-weight: 500;
       color: #0D0D0D;
       text-decoration: none;
-      transition: color 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.3s ease;
       display: inline-block;
       width: fit-content;
+      position: relative;
     }
     
     .home__link:hover {
-      color: #CC0000;
+      transform: translateX(8px);
     }
     
     .home-page .archive-container {
@@ -160,7 +161,7 @@
       <div class="archive__header-top">
         <a class="archive__logo" href="index.html">Sunni Hu</a>
         <nav class="archive__nav">
-          <a href="about.html">Home</a>
+          <a href="index.html">Home</a>
           <a href="work.html">Works</a>
           <a href="about.html">About</a>
         </nav>

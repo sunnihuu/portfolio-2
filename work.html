@@ -18,6 +18,28 @@
       }
     }
     
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
     html.home-page,
     body.home-page {
       background: #0D0D0D;
@@ -72,6 +94,10 @@
     .home-page .archive__nav a[href="about.html"] {
       color: #FFFFFF;
       opacity: 0.6;
+    }
+    
+    .home-page .archive__nav a::after {
+      color: #FFFFFF;
     }
     
     .home-page .archive__nav a:hover {
@@ -372,7 +398,7 @@
       <div class="archive__header-top">
         <a class="archive__logo" href="index.html">Sunni Hu</a>
         <nav class="archive__nav">
-          <a href="about.html">Home</a>
+          <a href="index.html">Home</a>
           <a href="work.html">Works</a>
           <a href="about.html">About</a>
         </nav>

@@ -275,12 +275,13 @@
       padding: 0;
       position: relative;
       opacity: 0;
-      transition: opacity 0.3s ease;
-      animation: slideInRight 0.6s ease-out;
+      transform: translateY(10px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
 
     .work__pdf-viewer.loaded {
       opacity: 1;
+      transform: translateY(0);
     }
 
     .work__pdf-viewer iframe {
@@ -427,7 +428,7 @@
     <main class="home__main">
       <div class="work__layout">
         <aside class="work__sidebar">
-          <h2 class="work__sidebar-title">→ Categories</h2>
+          <h2 class="work__sidebar-title">Categories</h2>
           <ul class="work__category-list">
             <li><a href="#branding" class="work__category active">Brand + Environment</a></li>
             <li><a href="#uiux" class="work__category">Service Systems</a></li>

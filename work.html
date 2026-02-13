@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="home-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Works | Sunni Hu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    html.home-page,
+    body.home-page {
+      background: #0D0D0D;
+      color: #FFFFFF;
+      overflow: hidden;
+      height: 100vh;
+    }
+    
+    .home-page .archive__header {
+      background: transparent;
+      border-bottom: none;
+      flex-shrink: 0;
+      padding: 2rem clamp(2rem, 5vw, 4rem);
+    }
+    
+    .home-page .archive__header .archive__header-top {
+      margin-bottom: 0;
+    }
+    
+    .home-page .archive__logo {
+      color: #FFFFFF;
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 400;
+      display: block;
+    }
+    
+    .home-page .archive__logo:hover {
+      color: #FFFFFF;
+      text-decoration: none;
+      opacity: 0.7;
+    }
+    
+    .home-page .archive__nav {
+      display: flex;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    
+    .home-page .archive__nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .home-page .archive__nav a[href="work.html"] {
+      color: #FFFFFF;
+      font-weight: 600;
+      opacity: 1;
+    }
+    
+    .home-page .archive__nav a[href="index.html"],
+    .home-page .archive__nav a[href="mailto:hello@example.com"],
+    .home-page .archive__nav a[href="about.html"] {
+      color: #FFFFFF;
+      opacity: 0.6;
+    }
+    
+    .home-page .archive__nav a:hover {
+      color: #FFFFFF;
+      opacity: 0.8;
+    }
+    
+    .home__main {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      height: calc(100vh - 80px);
+      padding: 3rem clamp(2rem, 5vw, 4rem) 2rem;
+      overflow-y: auto;
+      flex: 1;
+      gap: 3rem;
+      margin-top: 0;
+    }
+    
+    .home__content {
+      max-width: 600px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+    
+    .home__image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      overflow: visible;
+    }
+    
+    .home__image img {
+      max-width: 145%;
+      max-height: 145%;
+      object-fit: contain;
+      transform: translate(-100px, 70px);
+    }
+    
+    .home__tagline {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.3;
+      font-weight: 400;
+      color: #FFFFFF;
+      margin: 0 0 3rem 0;
+      max-width: 500px;
+    }
+    
+    .home__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    
+    .home__link {
+      font-family: 'Work Sans', sans-serif;
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 500;
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+      display: inline-block;
+      width: fit-content;
+    }
+    
+    .home__link:hover {
+      color: #FFFFFF;
+      opacity: 0.7;
+    }
+    
+    .home-page .archive-container {
+      max-width: none;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: visible;
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    .work__layout {
+      display: flex;
+      gap: 4rem;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .work__sidebar {
+      width: 250px;
+      flex-shrink: 0;
+    }
+    
+    .work__sidebar-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 400;
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: normal;
+      color: #FFFFFF;
+      margin: 0 0 1.5rem 0;
+    }
+    
+    .work__category-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    
+    .work__category {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #888888;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: block;
+      padding: 0.25rem 0;
+    }
+    
+    .work__category:hover {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    
+    .work__category.active {
+      color: #FFFFFF;
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    
+    .work__gallery {
+      flex: 1;
+      overflow-y: auto;
+      max-height: calc(100vh - 200px);
+    }
+
+    .work__pdf-viewer {
+      display: none;
+      width: 100%;
+      height: calc(100vh - 200px);
+      overflow: hidden;
+    }
+
+    .work__pdf-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .work__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .work__item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .work__item-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #1A1A1A;
+      overflow: hidden;
+    }
+    
+    .work__item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.2s ease;
+    }
+    
+    .work__item-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 18px;
+      font-weight: 400;
+      font-style: italic;
+      color: #FFFFFF;
+      margin: 0;
+      transition: color 0.2s ease;
+    }
+    
+    .work__item-meta {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #888888;
+      margin: 0;
+    }
+    
+    .work__item:hover {
+      cursor: pointer;
+    }
+    
+    .work__item:hover .work__item-title {
+      color: #FFFFFF;
+      opacity: 0.7;
+    }
+    
+    .work__item:hover .work__item-image img {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body class="archive-page home-page">
+  <div class="archive-container">
+    <header class="archive__header">
+      <div class="archive__header-top">
+        <a class="archive__logo" href="index.html">Sunni Hu</a>
+        <nav class="archive__nav">
+          <a href="index.html">Home</a>
+          <a href="work.html">Works</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+    
+    <main class="home__main">
+      <div class="work__layout">
+        <aside class="work__sidebar">
+          <h2 class="work__sidebar-title">→ Categories</h2>
+          <ul class="work__category-list">
+            <li><a href="#all" class="work__category active">All Works</a></li>
+            <li><a href="#branding" class="work__category">Brand + Space</a></li>
+            <li><a href="#uiux" class="work__category">Service Design</a></li>
+            <li><a href="#editorial" class="work__category">Play!</a></li>
+          </ul>
+        </aside>
+        <div class="work__gallery">
+          <div class="work__pdf-viewer" id="pdfViewer">
+            <iframe src="" id="pdfFrame"></iframe>
+          </div>
+          <div class="work__grid">
+            <a href="ucca-memory-imagination.html" class="work__item" data-category="editorial" style="text-decoration: none; color: inherit;">
+              <div class="work__item-image">
+                <img src="assets/images/Memory and Imagination/Memory and Imagination 8.png" alt="UCCA Memory and Imagination">
+              </div>
+              <h3 class="work__item-title">Memory and Imagination</h3>
+              <p class="work__item-meta">Play! • 2026</p>
+            </a>
+            <a href="ucca-kids.html" class="work__item" data-category="branding" style="text-decoration: none; color: inherit;">
+              <div class="work__item-image">
+                <img src="assets/images/UCCA Kids/UCCA Kids 3.jpg" alt="UCCA Kids Growth Diary">
+              </div>
+              <h3 class="work__item-title">UCCA Kids Growth Diary</h3>
+              <p class="work__item-meta">Brand + Space • 2023</p>
+            </a>
+            <a href="cafe-sabato.html" class="work__item" data-category="branding" style="text-decoration: none; color: inherit;">
+              <div class="work__item-image">
+                <img src="assets/images/Café Sabato/Café Sabato 11.png" alt="Café Sabato">
+              </div>
+              <h3 class="work__item-title">Café Sabato</h3>
+              <p class="work__item-meta">Brand + Space • 2025</p>
+            </a>
+            <a href="met-junzi.html" class="work__item" data-category="branding" style="text-decoration: none; color: inherit;">
+              <div class="work__item-image">
+                <img src="assets/images/The Met/The Met 10.gif" alt="The Met Store × Junzi">
+              </div>
+              <h3 class="work__item-title">The Met Store × Junzi</h3>
+              <p class="work__item-meta">Brand + Space • 2024</p>
+            </a>
+            <a href="shanchuan.html" class="work__item" data-category="branding" style="text-decoration: none; color: inherit;">
+              <div class="work__item-image">
+                <img src="assets/images/ShanChuan/ShanChuan_Wine_Bottle-07.png" alt="ShanChuan Wine">
+              </div>
+              <h3 class="work__item-title">ShanChuan Wine</h3>
+              <p class="work__item-meta">Brand + Space • 2024</p>
+            </a>
+            <div class="work__item" data-category="uiux">
+              <div class="work__item-image">
+                <img src="assets/images/sun.png" alt="Project 4">
+              </div>
+              <h3 class="work__item-title">App Experience</h3>
+              <p class="work__item-meta">Service Design • 2026</p>
+            </div>
+            <div class="work__item" data-category="uiux">
+              <div class="work__item-image">
+                <img src="assets/images/sun.png" alt="Project 6">
+              </div>
+              <h3 class="work__item-title">Interface Design</h3>
+              <p class="work__item-meta">Service Design • 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/work.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="home-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Sunni Hu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    html.home-page,
+    body.home-page {
+      background: #E8E34D;
+      color: #0D0D0D;
+      height: 100%;
+    }
+    
+    .home-page .archive__header {
+      background: #E8E34D;
+      border-bottom: none;
+      flex-shrink: 0;
+      padding: 2rem clamp(2rem, 5vw, 4rem);
+    }
+    
+    .home-page .archive__header .archive__header-top {
+      margin-bottom: 0;
+    }
+    
+    .home-page .archive__logo {
+      color: #0D0D0D;
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 400;
+      display: block;
+    }
+    
+    .home-page .archive__logo:hover {
+      color: #0D0D0D;
+      text-decoration: none;
+      opacity: 1;
+    }
+    
+    .home-page .archive__nav {
+      display: flex;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+    }
+    
+    .home-page .archive__nav a {
+      color: #888888;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .home-page .archive__nav a[href="about.html"] {
+      color: #0D0D0D;
+      font-weight: 600;
+    }
+    
+    .home-page .archive__nav a[href="index.html"],
+    .home-page .archive__nav a[href="work.html"] {
+      color: #888888;
+    }
+    
+    .home-page .archive__nav a:hover {
+      color: #0D0D0D;
+    }
+
+    .about-layout {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 100px);
+      padding: clamp(3rem, 5vw, 6rem) clamp(2rem, 5vw, 4rem);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: clamp(3rem, 5vw, 6rem);
+      margin-bottom: 4rem;
+      align-items: start;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .about-info {
+      font-family: 'Work Sans', sans-serif;
+      position: sticky;
+      top: 2rem;
+    }
+
+    .about-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .about-section h2 {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888888;
+      margin: 0 0 1rem 0;
+    }
+
+    .about-section p,
+    .about-section a {
+      font-size: 16px;
+      font-weight: 400;
+      color: #0D0D0D;
+      line-height: 1.6;
+      margin: 0.5rem 0;
+      text-decoration: none;
+    }
+
+    .about-section a:hover {
+      color: #CC0000;
+    }
+
+    .about-text {
+      font-family: 'Work Sans', sans-serif;
+    }
+
+    .about-text h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0 0 2rem 0;
+      color: #0D0D0D;
+    }
+
+    .about-text p {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #0D0D0D;
+      margin: 0 0 1.5rem 0;
+      max-width: 65ch;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-info {
+        position: static;
+      }
+    }
+
+    .home-page .archive-container {
+      max-width: none;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      animation: fadeIn 0.6s ease-out;
+    }
+  </style>
+</head>
+<body class="archive-page home-page">
+  <div class="archive-container">
+    <header class="archive__header">
+      <div class="archive__header-top">
+        <a class="archive__logo" href="index.html">Sunni Hu</a>
+        <nav class="archive__nav">
+          <a href="index.html">Home</a>
+          <a href="work.html">Works</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+    
+    <main class="about-layout">
+      <div class="about-content">
+        <div class="about-info">
+          <div class="about-section">
+            <h2>Contact</h2>
+            <p><a href="mailto:sunnihu0406@gmail.com">→ sunnihu0406@gmail.com</a></p>
+          </div>
+          
+          <div class="about-section">
+            <h2>Currently</h2>
+            <p>Based in Queens, NY</p>
+            <p>Master's Student at Columbia GSAPP</p>
+          </div>
+          
+          <div class="about-section">
+            <h2>Links</h2>
+            <p><a href="https://www.linkedin.com/in/sunni-hu" target="_blank">→ LinkedIn</a></p>
+            <p><a href="https://github.com/sunnihuu" target="_blank">→ GitHub</a></p>
+          </div>
+        </div>
+        
+        <div class="about-text">
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

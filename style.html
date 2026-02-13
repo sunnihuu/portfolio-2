@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Guide | Portfolio</title>
+  <meta name="description" content="Design System and Typography Reference" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .style-guide {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .style-section {
+      margin-bottom: 4rem;
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .style-section h2 {
+      color: var(--accent);
+      margin-bottom: 2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.875rem;
+    }
+
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .color-swatch {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .swatch-box {
+      width: 100%;
+      height: 120px;
+      border-radius: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .swatch-name {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--text);
+    }
+
+    .swatch-value {
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .typography-example {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1.5rem;
+    }
+
+    .typography-example:last-child {
+      border-bottom: none;
+    }
+
+    .type-label {
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .type-spec {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .type-spec-line {
+      margin-bottom: 0.25rem;
+    }
+
+    .accent-gold-bg {
+      background: var(--accent);
+    }
+
+    .accent-red-bg {
+      background: var(--accent-2);
+    }
+
+    .text-light-bg {
+      background: var(--text);
+    }
+
+    .return-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--accent);
+      text-decoration: none;
+      border-radius: 0;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .return-link:hover {
+      border-color: var(--accent);
+      background: rgba(208, 183, 109, 0.1);
+    }
+  </style>
+</head>
+<body class="archive-page">
+  <div class="style-guide">
+    <a href="index.html" class="return-link">← Back to Portfolio</a>
+
+    <!-- Color Palette Section -->
+    <div class="style-section">
+      <h2>Color Palette</h2>
+      <div class="color-palette">
+        <div class="color-swatch">
+          <div class="swatch-box" style="background: #1E1C19;"></div>
+          <div class="swatch-name">Background</div>
+          <div class="swatch-value">#1E1C19</div>
+          <div class="swatch-value">Espresso Black</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-box" style="background: #2A2723;"></div>
+          <div class="swatch-name">Surface</div>
+          <div class="swatch-value">#2A2723</div>
+          <div class="swatch-value">Dark Panel</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-box" style="background: #EDE7DA;"></div>
+          <div class="swatch-name">Card</div>
+          <div class="swatch-value">#EDE7DA</div>
+          <div class="swatch-value">Warm Cream</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-box text-light-bg";></div>
+          <div class="swatch-name">Text Light</div>
+          <div class="swatch-value">#F7F4EC</div>
+          <div class="swatch-value">Light Text</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-box" style="background: #111111;"></div>
+          <div class="swatch-name">Text Dark</div>
+          <div class="swatch-value">#111111</div>
+          <div class="swatch-value">Dark Text</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-box accent-gold-bg";></div>
+          <div class="swatch-name">Accent</div>
+          <div class="swatch-value">#D0B76D</div>
+          <div class="swatch-value">Warm Gold</div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-box accent-red-bg";></div>
+          <div class="swatch-name">Accent 2</div>
+          <div class="swatch-value">#B44B3A</div>
+          <div class="swatch-value">Muted Red</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typography Section -->
+    <div class="style-section">
+      <h2>Typography System</h2>
+
+      <div class="typography-example">
+        <div class="type-label">.t-h1 - Page Headline</div>
+        <div class="type-spec">
+          <div class="type-spec-line">Font: Work Sans</div>
+          <div class="type-spec-line">Weight: 500</div>
+          <div class="type-spec-line">Size: 72px (desktop) / 44px (mobile)</div>
+          <div class="type-spec-line">Line Height: 78px / 48px</div>
+          <div class="type-spec-line">Letter Spacing: -0.02em</div>
+        </div>
+        <h1 class="t-h1">The Quick Brown Fox</h1>
+      </div>
+
+      <div class="typography-example">
+        <div class="type-label">.t-h2 - Section Headline (Italic Accent)</div>
+        <div class="type-spec">
+          <div class="type-spec-line">Font: Instrument Serif, Italic</div>
+          <div class="type-spec-line">Weight: 400</div>
+          <div class="type-spec-line">Size: 44px (desktop) / 28px (mobile)</div>
+          <div class="type-spec-line">Line Height: 52px / 34px</div>
+        </div>
+        <h2 class="t-h2">A collection of recent work across disciplines</h2>
+      </div>
+
+      <div class="typography-example">
+        <div class="type-label">.t-h3 - Card Title</div>
+        <div class="type-spec">
+          <div class="type-spec-line">Font: Work Sans</div>
+          <div class="type-spec-line">Weight: 600</div>
+          <div class="type-spec-line">Size: 22px (desktop) / 18px (mobile)</div>
+          <div class="type-spec-line">Line Height: 28px / 24px</div>
+        </div>
+        <h3 class="t-h3">Aurora Brand System</h3>
+      </div>
+
+      <div class="typography-example">
+        <div class="type-label">.t-p1 - Body Text</div>
+        <div class="type-spec">
+          <div class="type-spec-line">Font: Work Sans</div>
+          <div class="type-spec-line">Weight: 400</div>
+          <div class="type-spec-line">Size: 16px (desktop) / 15px (mobile)</div>
+          <div class="type-spec-line">Line Height: 26px / 24px</div>
+        </div>
+        <p class="t-p1">The quick brown fox jumps over the lazy dog. This is a pangram used for testing typefaces and layouts. It contains every letter of the alphabet at least once.</p>
+      </div>
+
+      <div class="typography-example">
+        <div class="type-label">.t-meta - Metadata & Captions</div>
+        <div class="type-spec">
+          <div class="type-spec-line">Font: Work Sans</div>
+          <div class="type-spec-line">Weight: 500</div>
+          <div class="type-spec-line">Size: 12px (desktop) / 11px (mobile)</div>
+          <div class="type-spec-line">Line Height: 18px / 16px</div>
+          <div class="type-spec-line">Transform: UPPERCASE</div>
+          <div class="type-spec-line">Letter Spacing: 0.08em</div>
+        </div>
+        <p class="t-meta">Brand Identity / 2024</p>
+      </div>
+
+      <div class="typography-example">
+        <div class="type-label">.t-label - Labels</div>
+        <div class="type-spec">
+          <div class="type-spec-line">Font: Work Sans</div>
+          <div class="type-spec-line">Weight: 500</div>
+          <div class="type-spec-line">Size: 12px (desktop) / 11px (mobile)</div>
+          <div class="type-spec-line">Transform: UPPERCASE</div>
+          <div class="type-spec-line">Letter Spacing: 0.08em</div>
+          <div class="type-spec-line">Color: Accent (--accent)</div>
+        </div>
+        <p class="t-label">Categories</p>
+      </div>
+    </div>
+
+    <!-- Component Examples -->
+    <div class="style-section">
+      <h2>Component Examples</h2>
+      <p class="t-p1" style="margin-bottom: 1.5rem;">
+        Below are example components using the design system. Visit the <a href="index.html">main portfolio</a> to see them in action.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <!-- Example Card (Cream) -->
+        <div style="background: #EDE7DA; border-radius: 0; padding: 0; overflow: hidden; border: 1px solid rgba(0,0,0,0.08);">
+          <div style="width: 100%; height: 150px; background: #d4c5a0;"></div>
+          <div style="padding: 1.25rem;">
+            <h3 class="t-h3" style="color: #111111; font-size: 1.05rem;">Example Project Card</h3>
+            <p class="t-meta" style="color: rgba(17,17,17,0.65); margin-top: 0.5rem;">2024 · BRAND IDENTITY · SYSTEM DESIGN</p>
+          </div>
+        </div>
+
+        <!-- Filter Button Example -->
+        <div style="padding: 1.5rem; background: #2A2723; border: 1px solid rgba(255,255,255,0.12); border-radius: 0;">
+          <p class="t-label">Filter Examples</p>
+          <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0;">
+            <button class="filter__btn filter__btn--active t-p1">All Projects</button>
+            <button class="filter__btn t-p1">Brand Identity</button>
+            <button class="filter__btn t-p1" style="color: #D0B76D;">Product Design (Hover)</button>
+          </div>
+        </div>
+
+        <!-- Sidebar Label Example -->
+        <div style="padding: 1.5rem; background: #2A2723; border: 1px solid rgba(255,255,255,0.12); border-radius: 0;">
+          <p class="sidebar__label t-label">About</p>
+          <div class="sidebar__divider" style="margin: 0.75rem 0;"></div>
+          <p class="t-p1" style="font-size: 0.875rem;">Visual designer crafting systems.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Usage Guidelines -->
+    <div class="style-section">
+      <h2>Design System Rules</h2>
+      <div style="display: grid; gap: 1.5rem;">
+        <div>
+          <h3 style="color: var(--accent); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;">Typography</h3>
+          <ul class="t-p1" style="margin: 0; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Use Work Sans for all UI, navigation, and body text.</li>
+            <li>Use Instrument Serif Italic sparingly for section intros and emphasis only.</li>
+            <li>Maintain consistent vertical rhythm and line heights.</li>
+            <li>Always use uppercase + letter-spacing for labels and metadata.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="color: var(--accent); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;">Colors</h3>
+          <ul class="t-p1" style="margin: 0; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Dark background: Use --bg (#1E1C19)</li>
+            <li>Panels and sections: Use --surface (#2A2723)</li>
+            <li>Project cards: Use --card (#EDE7DA) with --text-dark text</li>
+            <li>Accents and hover states: Use --accent (#D0B76D)</li>
+            <li>Divider lines: Use --line (rgba(255,255,255,0.12))</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="color: var(--accent); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em;">Avoid</h3>
+          <ul class="t-p1" style="margin: 0; padding-left: 1.5rem; line-height: 1.8;">
+            <li>Drop shadows (use borders and whitespace instead)</li>
+            <li>Glassmorphism effects</li>
+            <li>Gradients</li>
+            <li>Rounded buttons or heavy UI elements</li>
+            <li>Too many accent colors</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+  <!-- <script src="js/bg.js"></script> -->
+</body>
+</html>

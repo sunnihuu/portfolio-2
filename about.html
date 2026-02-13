@@ -155,7 +155,7 @@
 
     .about-text-image {
       flex-shrink: 0;
-      width: 280px;
+      width: 200px;
     }
 
     .about-text-image img {
@@ -201,34 +201,35 @@
     </header>
     
     <main class="about-layout">
-      <div class="about-content">
+      <div class="about-content" style="display: grid; grid-template-columns: 350px 1fr; gap: clamp(3rem, 5vw, 6rem); align-items: start;">
         <div class="about-info">
           <div class="about-section">
             <h2>Contact</h2>
             <p><a href="mailto:sunnihu0406@gmail.com">→ sunnihu0406@gmail.com</a></p>
           </div>
-          
           <div class="about-section">
             <h2>Currently</h2>
             <p>Based in Queens, NY</p>
             <p>Master's Student at Columbia GSAPP</p>
           </div>
-          
           <div class="about-section">
             <h2>Links</h2>
             <p><a href="https://www.linkedin.com/in/sunni-hu" target="_blank">→ LinkedIn</a></p>
             <p><a href="https://github.com/sunnihuu" target="_blank">→ GitHub</a></p>
           </div>
         </div>
-        
-        <div class="about-text">
-          <div class="about-text-content">
-            <h1>Hi, I'm Sunni (Sunny☀️)</h1>
-            <p>I am a designer working across brand and space.</p>
-            <p>I was trained in graphic design, where I developed a foundation in identity systems and visual communication.</p>
-          </div>
-          <div class="about-text-image">
-            <img src="assets/images/About/About 5.jpg" alt="About" />
+        <div class="about-scroll" style="overflow-y: auto; max-height: 90vh; padding-right: 1rem;">
+          <div class="about-text">
+            <div class="about-text-image">
+              <img src="assets/images/About/About 5.jpg" alt="About" />
+            </div>
+            <div class="about-text-content">
+              <h1>Hi, I'm Sunni (Sunny☀️)</h1>
+              <p>I am a designer working at the intersection of brand and space.</p>
+              <p>I was trained in graphic design, where I developed a foundation in identity systems and visual communication. Through working with cultural institutions and design studios, I became increasingly interested in how branding extends beyond graphics into physical environments and public experience.</p>
+              <p>I am currently pursuing a master’s degree in computational design at Columbia University, expanding my understanding of spatial systems and information structures. My work focuses on translating brand frameworks into spatial contexts with clarity, consistency, and attention to human experience.</p>
+              <p>When I’m not at my desk, you can usually find me knitting, watching films, going to baseball games, or playing tennis.</p>
+            </div>
           </div>
         </div>
       </div>

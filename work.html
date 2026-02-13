@@ -195,17 +195,20 @@
     .work__sidebar {
       width: 250px;
       flex-shrink: 0;
+      animation: slideInLeft 0.6s ease-out;
     }
     
     .work__sidebar-title {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(16px, 2vw, 20px);
-      font-weight: 400;
-      font-style: italic;
-      text-transform: none;
-      letter-spacing: normal;
-      color: #FFFFFF;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888888;
       margin: 0 0 1.5rem 0;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out 0.1s forwards;
     }
     
     .work__category-list {
@@ -226,6 +229,20 @@
       transition: color 0.2s ease;
       display: block;
       padding: 0.25rem 0;
+      opacity: 0;
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+    
+    .work__category:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    
+    .work__category:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    
+    .work__category:nth-child(3) {
+      animation-delay: 0.4s;
     }
     
     .work__category:hover {
@@ -259,6 +276,7 @@
       position: relative;
       opacity: 0;
       transition: opacity 0.3s ease;
+      animation: slideInRight 0.6s ease-out;
     }
 
     .work__pdf-viewer.loaded {
@@ -289,6 +307,7 @@
       max-height: calc(100vh - 200px);
       opacity: 0;
       transition: opacity 0.3s ease;
+      animation: slideInRight 0.6s ease-out;
     }
 
     .work__graphics-gallery.active {

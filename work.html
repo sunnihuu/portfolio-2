@@ -226,9 +226,20 @@
       width: 100%;
       height: calc(100vh - 200px);
       overflow: hidden;
+      background: #0D0D0D;
+      border-radius: 8px;
+      padding: 0;
+      position: relative;
     }
 
     .work__pdf-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #0D0D0D;
+    }
+
+    .work__pdf-viewer embed {
       width: 100%;
       height: 100%;
       border: none;
@@ -310,15 +321,14 @@
         <aside class="work__sidebar">
           <h2 class="work__sidebar-title">→ Categories</h2>
           <ul class="work__category-list">
-            <li><a href="#all" class="work__category active">All Works</a></li>
-            <li><a href="#branding" class="work__category">Brand + Space</a></li>
+            <li><a href="#branding" class="work__category active">Brand + Space</a></li>
             <li><a href="#uiux" class="work__category">Service Design</a></li>
             <li><a href="#editorial" class="work__category">Play!</a></li>
           </ul>
         </aside>
         <div class="work__gallery">
           <div class="work__pdf-viewer" id="pdfViewer">
-            <iframe src="" id="pdfFrame"></iframe>
+            <embed id="pdfEmbed" type="application/pdf" />
           </div>
           <div class="work__grid">
             <a href="ucca-memory-imagination.html" class="work__item" data-category="editorial" style="text-decoration: none; color: inherit;">

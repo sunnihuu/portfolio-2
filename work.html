@@ -219,6 +219,7 @@
       flex: 1;
       overflow-y: auto;
       max-height: calc(100vh - 200px);
+      transition: opacity 0.3s ease;
     }
 
     .work__pdf-viewer {
@@ -226,22 +227,84 @@
       width: 100%;
       height: calc(100vh - 200px);
       overflow: hidden;
-      background: #0D0D0D;
-      border-radius: 8px;
+      background: transparent;
+      border-radius: 0;
       padding: 0;
       position: relative;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .work__pdf-viewer.loaded {
+      opacity: 1;
     }
 
     .work__pdf-viewer iframe {
       width: 100%;
       height: 100%;
       border: none;
-      background: #0D0D0D;
+      background: transparent;
+      outline: none;
     }
 
     .work__pdf-viewer embed {
       width: 100%;
       height: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+    }
+
+    .work__graphics-gallery {
+      display: none;
+      width: 100%;
+      padding: 0;
+      overflow-y: auto;
+      max-height: calc(100vh - 200px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .work__graphics-gallery.active {
+      opacity: 1;
+    }
+
+    .work__graphics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .work__graphics-item {
+      width: 100%;
+      overflow: visible;
+      background: transparent;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      box-shadow: 
+        0 2px 8px rgba(0,0,0,0.1),
+        0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .work__graphics-item:hover {
+      transform: translateY(-8px) scale(1.02) !important;
+      box-shadow: 
+        0 8px 24px rgba(0,0,0,0.15),
+        0 12px 32px rgba(0,0,0,0.12);
+      z-index: 10;
+    }
+
+    .work__graphics-item img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
       border: none;
     }
     
@@ -323,63 +386,17 @@
           <ul class="work__category-list">
             <li><a href="#branding" class="work__category active">Brand + Space</a></li>
             <li><a href="#uiux" class="work__category">Service Design</a></li>
-            <li><a href="#editorial" class="work__category">Play!</a></li>
+            <li><a href="#editorial" class="work__category">Playground</a></li>
           </ul>
         </aside>
         <div class="work__gallery">
           <div class="work__pdf-viewer" id="pdfViewer">
             <embed id="pdfEmbed" type="application/pdf" />
           </div>
+          <div class="work__graphics-gallery" id="graphicsGallery">
+            <div class="work__graphics-grid" id="graphicsGrid"></div>
+          </div>
           <div class="work__grid">
-            <a href="ucca-memory-imagination.html" class="work__item" data-category="editorial" style="text-decoration: none; color: inherit;">
-              <div class="work__item-image">
-                <img src="assets/images/Memory and Imagination/Memory and Imagination 8.png" alt="UCCA Memory and Imagination">
-              </div>
-              <h3 class="work__item-title">Memory and Imagination</h3>
-              <p class="work__item-meta">Play! • 2026</p>
-            </a>
-            <a href="ucca-kids.html" class="work__item" data-category="branding" style="text-decoration: none; color: inherit;">
-              <div class="work__item-image">
-                <img src="assets/images/UCCA Kids/UCCA Kids 3.jpg" alt="UCCA Kids Growth Diary">
-              </div>
-              <h3 class="work__item-title">UCCA Kids Growth Diary</h3>
-              <p class="work__item-meta">Brand + Space • 2023</p>
-            </a>
-            <a href="cafe-sabato.html" class="work__item" data-category="branding" style="text-decoration: none; color: inherit;">
-              <div class="work__item-image">
-                <img src="assets/images/Café Sabato/Café Sabato 11.png" alt="Café Sabato">
-              </div>
-              <h3 class="work__item-title">Café Sabato</h3>
-              <p class="work__item-meta">Brand + Space • 2025</p>
-            </a>
-            <a href="met-junzi.html" class="work__item" data-category="branding" style="text-decoration: none; color: inherit;">
-              <div class="work__item-image">
-                <img src="assets/images/The Met/The Met 10.gif" alt="The Met Store × Junzi">
-              </div>
-              <h3 class="work__item-title">The Met Store × Junzi</h3>
-              <p class="work__item-meta">Brand + Space • 2024</p>
-            </a>
-            <a href="shanchuan.html" class="work__item" data-category="branding" style="text-decoration: none; color: inherit;">
-              <div class="work__item-image">
-                <img src="assets/images/ShanChuan/ShanChuan_Wine_Bottle-07.png" alt="ShanChuan Wine">
-              </div>
-              <h3 class="work__item-title">ShanChuan Wine</h3>
-              <p class="work__item-meta">Brand + Space • 2024</p>
-            </a>
-            <div class="work__item" data-category="uiux">
-              <div class="work__item-image">
-                <img src="assets/images/sun.png" alt="Project 4">
-              </div>
-              <h3 class="work__item-title">App Experience</h3>
-              <p class="work__item-meta">Service Design • 2026</p>
-            </div>
-            <div class="work__item" data-category="uiux">
-              <div class="work__item-image">
-                <img src="assets/images/sun.png" alt="Project 6">
-              </div>
-              <h3 class="work__item-title">Interface Design</h3>
-              <p class="work__item-meta">Service Design • 2025</p>
-            </div>
           </div>
         </div>
       </div>

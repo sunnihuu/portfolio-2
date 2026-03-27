@@ -142,12 +142,20 @@ document.addEventListener('DOMContentLoaded', function() {
   workGrid.style.display = 'none';
   graphicsGallery.style.display = 'none';
   pdfViewer.style.display = 'block';
+  const pdfLoadingSpinner = document.getElementById('pdfLoadingSpinner');
+  pdfLoadingSpinner.style.display = 'flex';
+  pdfEmbed.style.visibility = 'hidden';
   pdfEmbed.src = 'assets/images/sunni-portfolio-3.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
-  
-  // Add loaded class after brief delay
+  pdfEmbed.onload = function() {
+    pdfLoadingSpinner.style.display = 'none';
+    pdfEmbed.style.visibility = 'visible';
+  };
+  // Fallback in case onload doesn't fire (older browsers)
   setTimeout(() => {
+    pdfLoadingSpinner.style.display = 'none';
+    pdfEmbed.style.visibility = 'visible';
     pdfViewer.classList.add('loaded');
-  }, 100);
+  }, 2000);
   
   categoryLinks.forEach(link => {
     link.addEventListener('click', function(e) {
@@ -169,10 +177,18 @@ document.addEventListener('DOMContentLoaded', function() {
         graphicsGallery.classList.remove('active');
         pdfViewer.style.display = 'block';
         pdfViewer.classList.remove('loaded');
+        pdfLoadingSpinner.style.display = 'flex';
+        pdfEmbed.style.visibility = 'hidden';
         pdfEmbed.src = 'assets/images/sunni-portfolio-3.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
+        pdfEmbed.onload = function() {
+          pdfLoadingSpinner.style.display = 'none';
+          pdfEmbed.style.visibility = 'visible';
+        };
         setTimeout(() => {
+          pdfLoadingSpinner.style.display = 'none';
+          pdfEmbed.style.visibility = 'visible';
           pdfViewer.classList.add('loaded');
-        }, 50);
+        }, 2000);
       }
       // Special handling for Service Design (uiux)
       else if (category === 'uiux') {
@@ -182,10 +198,18 @@ document.addEventListener('DOMContentLoaded', function() {
         graphicsGallery.classList.remove('active');
         pdfViewer.style.display = 'block';
         pdfViewer.classList.remove('loaded');
+        pdfLoadingSpinner.style.display = 'flex';
+        pdfEmbed.style.visibility = 'hidden';
         pdfEmbed.src = 'assets/images/service design.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH';
+        pdfEmbed.onload = function() {
+          pdfLoadingSpinner.style.display = 'none';
+          pdfEmbed.style.visibility = 'visible';
+        };
         setTimeout(() => {
+          pdfLoadingSpinner.style.display = 'none';
+          pdfEmbed.style.visibility = 'visible';
           pdfViewer.classList.add('loaded');
-        }, 50);
+        }, 2000);
       } else if (category === 'editorial') {
         // Hide work grid and PDF, show graphics gallery
         workGrid.style.display = 'none';

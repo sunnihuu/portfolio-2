@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
     'Artboard-1-2.jpg',
     'Artboard-1.jpg',
     'Jiayu-Sunni-Hu_CanvasRebel_img01.gif',
-    'Jiayu-Sunni-Hu_CanvasRebel_img06.gif',
     'aaa.png',
     'aaaa copy 2.png',
     'aaaa copy.png',

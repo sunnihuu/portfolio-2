@@ -7,6 +7,26 @@ document.addEventListener('DOMContentLoaded', function() {
   const pdfEmbed = document.getElementById('pdfEmbed');
   const graphicsGallery = document.getElementById('graphicsGallery');
   const graphicsGrid = document.getElementById('graphicsGrid');
+  const gifsGrid = document.getElementById('gifsGrid');
+  
+  // GIFs array
+  const gifsImages = [
+    'Happy Birthday_1.gif',
+    'Happy Birthday_2.gif',
+    'Happy New Year.gif',
+    'Hello.gif',
+    'I [heart] Nan Xiang_1.gif',
+    'I [heart] Nan Xiang_2.gif',
+    'Kung Hei Fat Choy.gif',
+    'Nice Job.gif',
+    'OK!.gif',
+    'Rainbow.gif',
+    'Thank you!.gif',
+    'Time for Soup Dumplings_1.gif',
+    'Time for Soup Dumplings_2.gif',
+    'XOXO.gif',
+    'You got this!.gif'
+  ];
   
   // Graphics dump images
   const graphicsImages = [
@@ -223,26 +243,74 @@ document.addEventListener('DOMContentLoaded', function() {
         const shuffledImages = shuffleArray(graphicsImages);
         
         shuffledImages.forEach(imageName => {
-          const item = document.createElement('div');
-          item.className = 'work__graphics-item';
+          const link = document.createElement('a');
+          link.href = `assets/images/playground/${imageName}`;
+          link.target = '_blank';
+          link.className = 'work__graphics-item';
           
           // Random rotation between -5 and 5 degrees
           const rotation = (Math.random() - 0.5) * 10; // -5 to +5 degrees
-          item.style.transform = `rotate(${rotation}deg)`;
+          link.style.transform = `rotate(${rotation}deg)`;
           
           const img = document.createElement('img');
-          img.src = `assets/images/graphics dump/${imageName}`;
+          img.src = `assets/images/playground/${imageName}`;
           img.alt = imageName;
           img.loading = 'lazy';
           
-          item.appendChild(img);
-          graphicsGrid.appendChild(item);
+          link.appendChild(img);
+          graphicsGrid.appendChild(link);
         });
         
         // Add active class for fade in
         setTimeout(() => {
           graphicsGallery.classList.add('active');
         }, 50);
+      }
+    });
+  });
+  
+  // Handle playground tabs (All / GIFs)
+  const playgroundTabs = document.querySelectorAll('.playground-tab');
+  playgroundTabs.forEach(tab => {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Remove active class from all tabs
+      playgroundTabs.forEach(t => t.classList.remove('active'));
+      
+      // Add active class to clicked tab
+      this.classList.add('active');
+      
+      const tabType = this.getAttribute('data-tab');
+      
+      if (tabType === 'all') {
+        graphicsGrid.style.display = 'grid';
+        gifsGrid.style.display = 'none';
+      } else if (tabType === 'gifs') {
+        graphicsGrid.style.display = 'none';
+        gifsGrid.style.display = 'grid';
+        
+        // Clear and populate GIFs grid
+        gifsGrid.innerHTML = '';
+        
+        gifsImages.forEach(imageName => {
+          const link = document.createElement('a');
+          link.href = `assets/images/playground/gifs/${imageName}`;
+          link.target = '_blank';
+          link.className = 'work__graphics-item';
+          
+          // Random rotation between -5 and 5 degrees
+          const rotation = (Math.random() - 0.5) * 10;
+          link.style.transform = `rotate(${rotation}deg)`;
+          
+          const img = document.createElement('img');
+          img.src = `assets/images/playground/gifs/${imageName}`;
+          img.alt = imageName;
+          img.loading = 'lazy';
+          
+          link.appendChild(img);
+          gifsGrid.appendChild(link);
+        });
       }
     });
   });
